@@ -3,16 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Your Title</title>
+    <title>Supermart</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
     <style>
-        body h1 {
-            color: blueviolet;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
         }
-
-        /* Top bar styling */
+        
+        
         .top-bar {
             background-color: #444;
             color: white;
@@ -42,7 +45,7 @@
             background-color: #888;
         }
 
-        /* Main navigation bar styling */
+        
         nav {
             background-color: #333;
             overflow: hidden;
@@ -78,34 +81,69 @@
             color: black;
         }
 
+        ul li:hover ul {display: block;}
+        ul li ul {
+        position: absolute;
+        width: 200px;
+        display: none;
+        }
+        ul li ul li { 
+        background: #555; 
+        display: block; 
+        }
+        ul li ul li a {display:block !important;} 
+        ul li ul li:hover {background: #666;}
+
         nav input[type="text"] {
             padding: 6px;
             border: none;
             font-size: 17px;
         }
+
+        
     </style>
 </head>
 <body>
-    <!-- Top bar with logo and login button -->
+    
     <div class="top-bar">
-        <div class="logo">Logo</div>
+        <div class="logo">Supermart</div>
         <a href="#login" class="login-button">Login</a>
     </div>
 
-    <!-- Main navigation bar -->
+    
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#categories">Categories</a> <ul>
+                <li><a href="#">Bakery</a></li>
+                <li><a href="#">Fresh produce</a></li>
+                <li><a href="#">Meats and seafoods</a></li>
+                <li><a href="#">Dairy</a></li>
+                <li><a href="#">Beverages</a></li>
+                <li><a href="#">Others</a></li>
+              </ul></li>
+            <li><a href="#deals">Deals</a></li>
+            <li><a href="#more">More</a>
+                
+            </li>
         </ul>
         <input type="text" placeholder="Search..">
     </nav>
 
-    <h1></h1>
-    <h2>Paragraph</h2>
-    <h3>Body</h3>
+    
+    <h2>Welcome Customer!</h2>
+    <h3>Here are some deals for you!</h3>
+    
+    
+    <div>
+        <button class="login-button">Bakery</button>
+        <button class="login-button">Produce</button>
+        <button class="login-button">Meats</button>
+        <button class="login-button">Seafood</button>
+        <button class="login-button">Dairy</button>
+        <button class="login-button">Drinks</button>
+        <button class="login-button">Others</button>
+    </div>
 
     <script src="" async defer></script>
 </body>
