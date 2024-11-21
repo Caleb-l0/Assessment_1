@@ -8,6 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
     <style>
+
+        .cart{
+            background-color: lightgrey;
+            width: 300;
+            border: 15px salmon;
+            padding: 50px;
+            margin: 20px;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -131,7 +140,7 @@
 
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#categories">Categories</a> 
                 <ul>
                     <li><a href="#">Bakery</a></li>
@@ -147,21 +156,14 @@
         </ul>
         <input type="text" placeholder="Search..">
     </nav>
-
-    <h2>Welcome Customer!</h2>
-    <h3>Here are some deals for you!</h3>
     
 
-    <div>
-        <button class="login-button">Bakery</button>
-        <button class="login-button">Produce</button>
-        <button class="login-button">Meats</button>
-        <button class="login-button">Seafood</button>
-        <button class="login-button">Dairy</button>
-        <button class="login-button">Drinks</button>
-        <button class="login-button">Others</button>
-    </div>
+    <h2>Your Cart</h2>
 
+    <div class = "cart"></div>
+    
+
+    
     <script src="" async defer></script>
 </body>
 </html>
