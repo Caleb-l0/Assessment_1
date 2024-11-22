@@ -14,9 +14,13 @@
     height: 60vh;
     background: url('https://static.vecteezy.com/system/resources/previews/026/435/191/non_2x/freshness-and-variety-in-healthy-eating-at-the-organic-supermarket-generated-by-ai-free-photo.jpg') no-repeat center center/cover;
 }
-
-        .products h3{
+        .products h2{
             font-size: 30px;
+            color: #fff;
+        }
+        .products h3{
+            
+            color: #1d2e28;
         }
         .products {
             text-align: center;
@@ -56,10 +60,20 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff;
+            background-color: #1d2e28;
+            background: url('https://wallpapers.com/images/hd/dark-wood-background-2000-x-1333-06dbtubnqaizwphc.jpg');
         }
 
         .top-bar {
+            background-color: #444;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 16px;
+        }
+
+        .items-box {
             background-color: #444;
             color: white;
             display: flex;
@@ -106,6 +120,8 @@
             align-items: center;
             padding: 0 16px;
         }
+
+        
 
         nav ul {
             list-style-type: none;
@@ -213,11 +229,48 @@
             background-color: #ff3b2f;
             transform: scale(1.05);
         }
+        nav.bottom-nav {
+    background-color: #333; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px 0; 
+    width: 100%; 
+    margin-top: auto; 
+}
+
+nav.bottom-nav ul {
+    display: flex; 
+    justify-content: center;
+    margin: 0; 
+    padding: 0; 
+}
+
+nav.bottom-nav ul li {
+    margin: 0 15px; 
+}
+
+nav.bottom-nav ul li a {
+    color: white;
+    
+    font-size: 1.1em; 
+    padding: 10px 20px;
+    background-color: #444; 
+    border-radius: 5px; 
+    
+}
+
+nav.bottom-nav ul li a:hover {
+    background-color: #ff6f61; 
+    transform: scale(1.1);
+}
+
         </style>
     </style>
 </head>
 
 <body>
+
     <div class="top-bar">
         <div class="logo">Supermart</div>
         <div class="icons">
@@ -260,7 +313,7 @@
     </header>
 
     <section class="products">
-        <h3>Here are some deals for you!</h3>
+        <h2>Here are some deals for you!</h3>
         <div class="product-grid">
             <div class="product-card">
                 <img src="https://gethopto.com/wp-content/uploads/2021/03/00029-AppleFuji25.jpg" alt="Product 1">
@@ -272,25 +325,52 @@
                 <img src="https://dixonsseafood.com/wp-content/uploads/2016/01/CodLoin-400x400.jpg" alt="Product 2">
                 <h3>Fresh Cod (200g)</h3>
                 <p> ̶$̶2̶5̶.̶0̶0̶</p>
-                <p>22.00</p>
+                <p>$22.00</p>
             </div>
             <div class="product-card">
                 <img src="https://www.siradis.ch/wp-content/uploads/2022/03/oatly_chocolate.jpg" alt="Product 3">
                 <h3>Oatly Oat Milk (Chocolate)</h3>
                 <p> ̶$̶9̶.̶9̶9̶</p>
-                <p>#7.99</p>
+                <p>$7.99</p>
             </div>
         </div>
     </section>
 
-    <nav2>
+    <nav class = "bottom-nav">
         <ul>
             <li><a href="#Bakery">Bakery</a></li>
-
-
-
+            <li><a href="#Produce">Produce</a></li>
+            <li><a href="#Meats and Seafood">Meats</a></li>
+            <li><a href="#Dairy">Dairy</a></li>
+            <li><a href="#Beverages">Beverages</a></li>
+            <li><a href="Others">Others</a></li>
         </ul>
-    </nav2>
+
+    </nav>
+    <div class = "items-box ">
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="product1.jpg" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>$10.00</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="product2.jpg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>$15.00</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class= "product-item">
+                <img src="" alt = "Product 3">
+                <h3>Product 3</h3>
+                <p>$10.00</p>
+                <a href="" class="btn">Add to Cart</a>
+
+            </div>
+        </div>
+
+    </div>
 
     
 
