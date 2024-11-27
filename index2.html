@@ -15,22 +15,64 @@
             background-color: #1d2e28;
             background: url('https://wallpapers.com/images/hd/dark-wood-background-2000-x-1333-06dbtubnqaizwphc.jpg');
         }
-        
 
-        .cart{
-            background-color: lightgrey;
-            width: 300;
-            border: 15px salmon;
-            padding: 50px;
-            margin: 20px;
+        .scroll-container {
+            width: 80%;
+            height: 100px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            margin: 20px auto;
+            scroll-behavior: smooth;
+            background: transparent;
         }
-         
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+        .cart {
             background-color: #fff;
+            width: 90%;
+            padding: 20px;
+            margin: 20px auto;
+            height: 300px;
+            overflow-y: auto;
+            max-height: 400px;
+            background: transparent;
+        }
+
+        .cart-item {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px; /* Fixed height for consistent appearance */
+        }
+
+        .cart-item .item-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .cart-item .item-name {
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .cart-item .item-quantity {
+            width: 60px;
+            padding: 5px;
+            margin-left:auto;
+        }
+
+        .cart-item .item-price {
+            color: #4CAF50;
         }
 
         .top-bar {
@@ -62,15 +104,14 @@
             background-color: #888;
         }
 
-        
         .top-bar .icons {
             display: flex;
             gap: 10px;
-            margin-left: auto; 
+            margin-left: auto;
         }
 
         .top-bar img {
-            width: 30px; 
+            width: 30px;
             height: 30px;
         }
 
@@ -81,9 +122,10 @@
             align-items: center;
             padding: 0 16px;
         }
-        body h2{
+
+        body h2 {
             color: #fff;
-            
+            justify-content: center;
         }
 
         nav ul {
@@ -113,36 +155,47 @@
             color: black;
         }
 
-        ul li:hover ul { display: block; }
+        ul li:hover ul {
+            display: block;
+        }
+
         ul li ul {
             position: absolute;
             width: 200px;
             display: none;
         }
-        ul li ul li { 
-            background: #555; 
-            display: block; 
+
+        ul li ul li {
+            background: #555;
+            display: block;
         }
-        ul li ul li a { display:block !important; } 
-        ul li ul li:hover { background: #666; }
+
+        ul li ul li a {
+            display: block !important;
+        }
+
+        ul li ul li:hover {
+            background: #666;
+        }
 
         nav input[type="text"] {
             padding: 6px;
             border: none;
             font-size: 17px;
+            opacity: 0.2;
         }
 
         body img {
             display: block;
             margin-left: auto;
         }
+
         .footer {
             background: #333;
             color: white;
             text-align: center;
             padding: 20px 0;
         }
-        </style>
     </style>
 </head>
 <body>
@@ -153,16 +206,14 @@
                 <img src="https://img.icons8.com/?size=100&id=zhda2EVBCvHY&format=png&color=000000">
             </a>
             <img src="https://img.icons8.com/?size=100&id=Fx70T4fgtNmt&format=png&color=000000" width="35" height="35">
-            
         </div>
         <a href="#login" class="login-button">Login</a>
     </div>
-    
 
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#categories">Categories</a> 
+            <li><a href="#categories">Categories</a>
                 <ul>
                     <li><a href="#">Bakery</a></li>
                     <li><a href="#">Fresh produce</a></li>
@@ -177,19 +228,55 @@
         </ul>
         <input type="text" placeholder="Search..">
     </nav>
-    
 
     <h2>Your Cart</h2>
 
-    <div class = "cart"></div>
-    
-
-    
-    <script src="" async defer></script>
+    <div class="cart">
+        <div class="cart-item">
+            <div class="item-info">
+                <img src="https://daganghalal.blob.core.windows.net/24959/Product/1000x1000__topqualitynewlyharvestedfreshsweetjuicy-1575354128134.jpg" alt="Item 1 Image">
+                <span class="item-name">South African Sweet Oranges</span>
+            </div>
+            <input type="number" class="item-quantity" value="1" min="1">
+            <span class="item-price">$1.20</span>
+        </div>
+        <div class="cart-item">
+            <div class="item-info">
+                <img src="https://cdn.shopify.com/s/files/1/2331/3573/products/mango.jpg?v=1505654907" alt="Item 2 Image">
+                <span class="item-name">Australian Mango</span>
+            </div>
+            <input type="number" class="item-quantity" value="1" min="1">
+            <span class="item-price">$4.00</span>
+        </div>
+        <div class="cart-item">
+            <div class="item-info">
+                <img src="https://storage.googleapis.com/eezee-product-images/pokka-green-tea-250ml-tetra-agpgp3078-zm2u_600.jpg" alt="Item 3 Image">
+                <span class="item-name">Pokka Green Tea</span>
+            </div>
+            <input type="number" class="item-quantity" value="1" min="1">
+            <span class="item-price">$10.00</span>
+        </div>
+        <div class="cart-item">
+            <div class="item-info">
+                <img src="https://down-sg.img.susercontent.com/file/7c14e72b3a3cb7dbec73623ce7b80701" alt="Item 4 Image">
+                <span class="item-name">Himalayan Salt Candy</span>
+            </div>
+            <input type="number" class="item-quantity" value="1" min="1">
+            <span class="item-price">$7.05</span>
+        </div>
+        <div class="cart-item">
+            <div class="item-info">
+                <img src="https://media.nedigital.sg/fairprice/fpol/media/images/product/XL/11978979_XL1_20211209.jpg?w=1024&q=70" alt="Item 5 Image">
+                <span class="item-name">SCS Unsalted Butter</span>
+            </div>
+            <input type="number" class="item-quantity" value="1" min="1">
+            <span class="item-price">$7.50</span>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 BrandName. All rights reserved.</p>
+            <p>&copy; 2024 Supermart. All rights reserved.</p>
         </div>
     </footer>
 </body>
