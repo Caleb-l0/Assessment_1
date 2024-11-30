@@ -8,6 +8,12 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
         header {
     
     width: 100%;
@@ -184,19 +190,14 @@
             display: block;
             margin-left: auto;
         }
-        .footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
+        
         .banner {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     background: rgba(0, 0, 0, 0.5); 
-}
+        }
 
 
 .banner-content {
@@ -229,44 +230,95 @@
             background-color: #ff3b2f;
             transform: scale(1.05);
         }
-        nav.bottom-nav {
-    background-color: #333; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    padding: 10px 0; 
-    width: 100%; 
-    margin-top: auto; 
-}
+        .bottom-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #f4f4f4;
+            border-top: 2px solid #ccc;
+        }
 
-nav.bottom-nav ul {
-    display: flex; 
-    justify-content: center;
-    margin: 0; 
-    padding: 0; 
-}
+        .bottom-nav li {
+            margin: 0 10px;
+        }
 
-nav.bottom-nav ul li {
-    margin: 0 15px; 
-}
+        .bottom-nav a {
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            color: #333;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
 
-nav.bottom-nav ul li a {
-    color: white;
-    
-    font-size: 1.1em; 
-    padding: 10px 20px;
-    background-color: #444; 
-    border-radius: 5px; 
-    
-}
+        .bottom-nav a:hover {
+            background-color: #ddd;
+        }
 
-nav.bottom-nav ul li a:hover {
-    background-color: #ff6f61; 
-    transform: scale(1.1);
-}
+        
+        .product-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .product-group {
+            display: none; 
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product-item {
+            margin: 10px;
+            width: 300px;
+            height: 400px;
+            text-align: center;
+        
+            background-color:#ccc;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-item h3 {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .product-item p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .product-item a {
+            text-decoration: none;
+            padding: 10px 15px;
+            color: #fff;
+            background-color: #ff0000a4;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .product-item a:hover {
+            background-color: #f04d4d;
+        }
 
         </style>
-    </style>
+    
 </head>
 
 <body>
@@ -279,7 +331,7 @@ nav.bottom-nav ul li a:hover {
             </a>
             <img src="https://img.icons8.com/?size=100&id=Fx70T4fgtNmt&format=png&color=000000" width="35" height="35">
         </div>
-        <a href="#login" class="login-button">Login</a>
+        <a href="loginpage.html" class="login-button">Login</a>
     </div>
 
     <nav>
@@ -287,7 +339,7 @@ nav.bottom-nav ul li a:hover {
             <li><a href="#home">Home</a></li>
             <li><a href="#categories">Categories</a>
                 <ul>
-                    <li><a href="#">Bakery</a></li>
+                    <li><a href="bakeryindex.html">Bakery</a></li>
                     <li><a href="#">Fresh produce</a></li>
                     <li><a href="#">Meats and seafoods</a></li>
                     <li><a href="#">Dairy</a></li>
@@ -336,54 +388,174 @@ nav.bottom-nav ul li a:hover {
         </div>
     </section>
 
+   
     
-
-    <nav class = "bottom-nav">
+    <nav class="bottom-nav">
         <ul>
-            <li><a href="#Bakery">Bakery</a></li>
-            <li><a href="#Produce">Produce</a></li>
-            <li><a href="#Meats and Seafood">Meats</a></li>
-            <li><a href="#Dairy">Dairy</a></li>
-            <li><a href="#Beverages">Beverages</a></li>
-            <li><a href="Others">Others</a></li>
+            <li><a href="#" class="tab-button" data-category="bakery">Bakery</a></li>
+            <li><a href="#" class="tab-button" data-category="produce">Produce</a></li>
+            <li><a href="#" class="tab-button" data-category="meats">Meats</a></li>
+            <li><a href="#" class="tab-button" data-category="dairy">Dairy</a></li>
+            <li><a href="#" class="tab-button" data-category="beverages">Beverages</a></li>
+            <li><a href="#" class="tab-button" data-category="others">Others</a></li>
         </ul>
-
-
     </nav>
-    <div class = "items-box ">
-        <div class="product-grid">
+
+    <div class="product-display" id="productDisplay">
+        
+        <div class="product-group" id="bakery">
             <div class="product-item">
-                <img src="product1.jpg" alt="Product 1">
-                <h3>Product 1</h3>
-                <p>$10.00</p>
+                <img src="https://th.bing.com/th/id/OIP.T0yYhySdBLDbMjEW66a1BQHaEK?rs=1&pid=ImgDetMain" alt="Bakery Product 1">
+                <h3>Freshly Baked Baguette</h3>
+                <p>$7.00</p>
                 <a href="#" class="btn">Add to Cart</a>
             </div>
             <div class="product-item">
-                <img src="product2.jpg" alt="Product 2">
-                <h3>Product 2</h3>
+                <img src="https://cache.cosmopolitan.fr/data/photo/w2000_ci/5o/recette-pain-chocolat.jpg" alt="Bakery Product 2">
+                <h3>Pain Au Chocolat</h3>
+                <p>$4.99</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="https://img.freepik.com/free-photo/minimalist-pile-delicious-cookies-copy-space_23-2148654561.jpg?t=st=1732775966~exp=1732779566~hmac=f0fbd6c0cf54736d026a7b223f1f2d74be5e8829bea47470ad683f9b9cb8aa9a&w=1060" alt="Bakery Product 3">
+                <h3>Chocolate Chip Cookies</h3>
                 <p>$15.00</p>
                 <a href="#" class="btn">Add to Cart</a>
             </div>
-            <div class= "product-item">
-                <img src="" alt = "Product 3">
-                <h3>Product 3</h3>
-                <p>$10.00</p>
-                <a href="" class="btn">Add to Cart</a>
+        </div>
 
+       
+        <div class="product-group" id="produce" style="display: none;">
+            <div class="product-item">
+                <img src="https://2.bp.blogspot.com/-cIyZdosPzYg/WA1qvoMU2VI/AAAAAAAALqo/eu4B6Qp73isgvwa4i3szI-7Iq1_G61YXQCLcB/s1600/fuji.jpg" alt="Produce Product 1">
+                <h3>Fuji Apple</h3>
+                <p>$0.80</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="https://img.emedihealth.com/wp-content/uploads/2022/09/health-benefits-of-mangoes-feat.jpg" alt="Produce Product 2">
+                <h3>Australian Mango</h3>
+                <p>$15.00</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.tY9ALUiH27wDZKzwK1lGTwHaE8?rs=1&pid=ImgDetMain" alt="Produce Product 3">
+                <h3>Chinese Cabbage</h3>
+                <p>$1.20</p>
+                <a href="#" class="btn">Add to Cart</a>
             </div>
         </div>
 
+        <div class="product-group" id="meats" style="display: none;">
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.jCq8CCOeCkkRLzMNgpy69QHaFj?rs=1&pid=ImgDetMain" alt="Produce Product 1">
+                <h3>Fresh Whole Chicken</h3>
+                <p>$10.00</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="https://www.seafoodsupplier.com.sg/wp-content/uploads/2021/02/shutterstock_184247105.jpg" alt="Produce Product 2">
+                <h3>Salmon Fillet</h3>
+                <p>$9.99</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.pkD4WH1SVQWbdYlWNJ0y-QHaE8?rs=1&pid=ImgDetMain" alt="Produce Product 3">
+                <h3>Minced Grass-Fed Beef</h3>
+                <p>$20.00</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+        </div>
+
+        <div class="product-group" id="dairy" style="display: none;">
+            <div class="product-item">
+                <img src="https://www.sumhupdistributors.com.my/wp-content/uploads/2017/03/unsalted-butter.jpg" alt="Produce Product 1">
+                <h3>SCS Unsalted Butter</h3>
+                <p>$7.50</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="https://images.deliveryhero.io/image/darkstores/sgp/crown_pacific/20230112/8888470018303_01.jpg?height=480&dpi=1" alt="Produce Product 2">
+                <h3>Meiji Fresh Milk</h3>
+                <p>$4.00</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="https://thelaughingcow-sea.com/wp-content/uploads/2023/06/cheese-sandwich-1024x683.webp" alt="Produce Product 3">
+                <h3>Laughing Cow Cheese Slices</h3>
+                <p>$5.00</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+        </div>
+
+        <div class="product-group" id="beverages" style="display: none;">
+            <div class="product-item">
+                <img src="https://cdn.shopify.com/s/files/1/1510/0332/products/PokkaGreenTeaPacket_6x250ml-Piece_1024x1024.jpg?v=1591135126" alt="Produce Product 1">
+                <h3>Pokka Green Tea</h3>
+                <p>$10.00</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="https://myoneshop.net/wp-content/uploads/2021/04/milo-3-1536x990.jpg" alt="Produce Product 2">
+                <h3>Milo 6 Pack</h3>
+                <p>$12.00</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/R.86d3a33d32f55f062814f67f906a3cb4?rik=QNlAf43F2YVuTg&riu=http%3a%2f%2fcdn.shopify.com%2fs%2ffiles%2f1%2f1510%2f0332%2fproducts%2fPokkaPeachTeaBottle_1.5L-Piece_1200x1200.jpg%3fv%3d1591137297&ehk=6g%2bNz7vFwc0JLJ1%2f16VdUsLdOrCgml5XV5C0KoqToDI%3d&risl=&pid=ImgRaw&r=0" alt="Produce Product 3">
+                <h3>Ice Peach Tea</h3>
+                <p>$1.20</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+        </div>
+
+        <div class="product-group" id="others" style="display: none;">
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/R.9938362deb42f652c3d5726aa22fa946?rik=POGgyHH9HOe%2f6A&riu=http%3a%2f%2fcdn2.bigcommerce.com%2fserver5100%2fh711h5%2fproducts%2f982%2fimages%2f1757%2fkit_kat__91519.1485997572.1280.1280.png%3fc%3d2&ehk=vu6A%2bSKyZ5uKEl8qcmo7vWqMYRC8CAIUIbqGAx2MDBI%3d&risl=&pid=ImgRaw&r=0" alt="others 1">
+                <h3>KitKat Chocolate Bar</h3>
+                <p>$2.05</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="https://www.lkceservice.com/image/lkceservice/image/cache/data/all_product_images/product-1897/himalaya%20salt%20ginger%20lemon-1628x845.png" alt="others 2">
+                <h3>Himalayan Salt Candy</h3>
+                <p>$7.05</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.R2ByjawoGAOKZiGNzGCiQQHaGM?w=230&h=192&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="others 3">
+                <h3>Kleenex Facial Tissues</h3>
+                <p>$20.00</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+        </div>
+
+        
     </div>
 
-    
+    <script>
+        
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', event => {
+                event.preventDefault();
 
-    <script src="" async defer></script>
+                
+                document.querySelectorAll('.product-group').forEach(group => {
+                    group.style.display = 'none';
+                });
 
-    <footer class="footer">
+                
+                const category = button.getAttribute('data-category');
+                document.getElementById(category).style.display = 'flex';
+            });
+        });
+    </script>
+
+<footer class="footer">
         <div class="container">
             <p>&copy; 2024 BrandName. All rights reserved.</p>
         </div>
-    </footer>
+    </footer> 
 </body>
 
 </html>
