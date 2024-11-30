@@ -1,57 +1,3 @@
-.footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-header {
-
-width: 100%;
-height: 60vh;
-background: url('https://static.vecteezy.com/system/resources/previews/026/435/191/non_2x/freshness-and-variety-in-healthy-eating-at-the-organic-supermarket-generated-by-ai-free-photo.jpg') no-repeat center center/cover;
-}
-.products h2{
-    font-size: 30px;
-    color: #fff;
-}
-.products h3{
-    
-    color: #1d2e28;
-}
-.products {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.product-grid {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.product-card {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 300px;
-}
-
-.product-card:hover{
-    transform: translateY(-10px);
-}
-
-.product-card img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-a[href='index2.html']:hover {
-    transform: scale(1.1);
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -60,57 +6,42 @@ body {
     background: url('https://wallpapers.com/images/hd/dark-wood-background-2000-x-1333-06dbtubnqaizwphc.jpg');
 }
 
-
-
-.top-bar {
-    background-color: #444;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 16px;
-}
-
-.items-box {
-    background-color: #444;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 16px;
-}
-
-.top-bar .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.top-bar .login-button {
-    background-color: #666;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-.top-bar .login-button:hover {
-    background-color: #888;
-}
-
-.top-bar .icons {
-    display: flex;
-    gap: 10px;
+body img {
+    display: block;
     margin-left: auto;
 }
 
-.top-bar img {
-    width: 30px;
-    height: 30px;
+/* Header */
+header {
+    width: 100%;
+    height: 60vh;
+    background: url('https://static.vecteezy.com/system/resources/previews/026/435/191/non_2x/freshness-and-variety-in-healthy-eating-at-the-organic-supermarket-generated-by-ai-free-photo.jpg') no-repeat center center/cover;
 }
 
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+}
+
+.banner-content {
+    text-align: center;
+    color: #fff;
+}
+
+.banner-content h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.banner-content p {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+/* Navigation */
 nav {
     background-color: #333;
     overflow: hidden;
@@ -118,8 +49,6 @@ nav {
     align-items: center;
     padding: 0 16px;
 }
-
-
 
 nav ul {
     list-style-type: none;
@@ -178,34 +107,88 @@ nav input[type="text"] {
     opacity: 0.2;
 }
 
-body img {
-    display: block;
+/* Top Bar */
+.top-bar {
+    background-color: #444;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+}
+
+.top-bar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.top-bar .login-button {
+    background-color: #666;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.top-bar .login-button:hover {
+    background-color: #888;
+}
+
+.top-bar .icons {
+    display: flex;
+    gap: 10px;
     margin-left: auto;
 }
 
-.banner {
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100%;
-background: rgba(0, 0, 0, 0.5); 
+.top-bar img {
+    width: 30px;
+    height: 30px;
 }
 
-
-.banner-content {
-text-align: center;
-color: #fff;
+/* Products Section */
+.products {
+    text-align: center;
+    padding: 50px 20px;
 }
 
-.banner-content h1 {
-font-size: 3em;
-margin: 0;
+.products h2 {
+    font-size: 30px;
+    color: #fff;
 }
 
-.banner-content p {
-font-size: 1.5em;
-margin: 10px 0;
+.products h3 {
+    color: #1d2e28;
 }
+
+.product-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Add to Cart Button */
 .add-to-cart {
     display: inline-block;
     padding: 12px 24px;
@@ -222,6 +205,8 @@ margin: 10px 0;
     background-color: #ff3b2f;
     transform: scale(1.05);
 }
+
+/* Bottom Navigation */
 .bottom-nav ul {
     list-style-type: none;
     padding: 0;
@@ -250,7 +235,7 @@ margin: 10px 0;
     background-color: #ddd;
 }
 
-
+/* Product Display */
 .product-display {
     display: flex;
     justify-content: center;
@@ -270,12 +255,11 @@ margin: 10px 0;
     width: 300px;
     height: 400px;
     text-align: center;
-
-    background-color:#ccc;
+    background-color: #ccc;
     display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-item img {
@@ -309,14 +293,20 @@ margin: 10px 0;
     background-color: #f04d4d;
 }
 
-@media (max-width: 768px) {
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
 
-    
+/* Media Queries */
+@media (max-width: 768px) {
     header {
         height: 40vh;
     }
 
-    
     .product-grid {
         flex-direction: column;
         align-items: center;
@@ -327,13 +317,11 @@ margin: 10px 0;
         margin-bottom: 20px;
     }
 
-    
     .top-bar {
         padding: 8px;
-        flex-wrap: wrap; 
+        flex-wrap: wrap;
     }
 
-    
     .top-bar .logo {
         font-size: 1.2em;
     }
@@ -343,12 +331,10 @@ margin: 10px 0;
         font-size: 0.9em;
     }
 
-    
     .product-item img, .product-card img {
         max-width: 80%; 
     }
 
-    
     .banner-content h1 {
         font-size: 2em;
     }
@@ -357,7 +343,6 @@ margin: 10px 0;
         font-size: 1.2em;
     }
 
-    
     nav ul li {
         margin-right: 5px;
     }
@@ -367,7 +352,6 @@ margin: 10px 0;
         font-size: 0.9em;
     }
 
-    
     .bottom-nav ul {
         flex-direction: column; 
         align-items: center;
@@ -383,10 +367,7 @@ margin: 10px 0;
     }
 }
 
-
 @media (max-width: 480px) {
-
-    
     .product-card {
         padding: 10px;
     }
@@ -409,7 +390,7 @@ margin: 10px 0;
         font-size: 1em;
     }
 
-    /* Adjust navigation further */
+    
     nav ul li a {
         padding: 8px;
         font-size: 0.8em;

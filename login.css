@@ -3,14 +3,6 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
-}
-
-
-.content {
-    flex: 1;
-}
-
-body {
     font-family: Arial, sans-serif;
     background-color: #1d2e28;
     background: url('https://wallpapers.com/images/hd/dark-wood-background-2000-x-1333-06dbtubnqaizwphc.jpg');
@@ -18,9 +10,15 @@ body {
     background-repeat: no-repeat;
 }
 
+.content {
+    flex: 1;
+}
 
+h2 {
+    margin-bottom: 20px;
+}
 
-
+/* Top Bar */
 .top-bar {
     background-color: #444;
     color: white;
@@ -50,7 +48,7 @@ body {
     cursor: pointer;
 }
 
-
+/* Navigation */
 nav {
     background-color: #333;
     overflow: hidden;
@@ -85,7 +83,6 @@ nav ul li a:hover {
     color: black;
 }
 
-
 nav ul li ul {
     display: none;
     position: absolute;
@@ -110,7 +107,6 @@ nav ul li ul li a {
     padding: 10px;
 }
 
-
 nav input[type="text"] {
     padding: 6px;
     border: 1px solid #ccc;
@@ -119,7 +115,7 @@ nav input[type="text"] {
     margin-left: auto;
 }
 
-
+/* Login Container */
 .login-container {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
@@ -131,11 +127,7 @@ nav input[type="text"] {
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px auto; 
-}
-
-h2 {
-    margin-bottom: 20px;
+    margin: 20px auto;
 }
 
 .form-group {
@@ -173,7 +165,7 @@ button:hover {
     background-color: #45a049;
 }
 
-
+/* Footer */
 .footer {
     background: #333;
     color: white;

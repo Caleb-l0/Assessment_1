@@ -6,68 +6,12 @@ body {
     background: url('https://wallpapers.com/images/hd/dark-wood-background-2000-x-1333-06dbtubnqaizwphc.jpg');
 }
 
-
-
-
-.scroll-container {
-    width: 80%;
-    height: 100px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    margin: 20px auto;
-    scroll-behavior: smooth;
-    background: transparent;
+body img {
+    display: block;
+    margin-left: auto;
 }
 
-.cart {
-    background-color: #fff;
-    width: 90%;
-    padding: 20px;
-    margin: 20px auto;
-    height: 300px;
-    overflow-y: auto;
-    max-height: 400px;
-    background: transparent;
-}
-
-.cart-item {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px; 
-}
-
-.cart-item .item-info {
-    display: flex;
-    align-items: center;
-}
-
-.cart-item img {
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
-}
-
-.cart-item .item-name {
-    font-weight: bold;
-    margin-right: 15px;
-}
-
-.cart-item .item-quantity {
-    width: 60px;
-    padding: 5px;
-    margin-left:auto;
-}
-
-.cart-item .item-price {
-    color: #4CAF50;
-}
-
+/* Top Bar */
 .top-bar {
     background-color: #444;
     color: white;
@@ -108,17 +52,13 @@ body {
     height: 30px;
 }
 
+/* Navigation */
 nav {
     background-color: #333;
     overflow: hidden;
     display: flex;
     align-items: center;
     padding: 0 16px;
-}
-
-body h2 {
-    color: #fff;
-    justify-content: center;
 }
 
 nav ul {
@@ -178,15 +118,78 @@ nav input[type="text"] {
     opacity: 0.2;
 }
 
-body img {
-    display: block;
+/* Cart Styles */
+.cart {
+    background-color: #fff;
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+    height: 300px;
+    overflow-y: auto;
+    max-height: 400px;
+    background: transparent;
+}
+
+.cart-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.cart-item .item-info {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.cart-item .item-name {
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.cart-item .item-quantity {
+    width: 60px;
+    padding: 5px;
     margin-left: auto;
 }
 
+.cart-item .item-price {
+    color: #4CAF50;
+}
+
+/* Scroll Container */
+.scroll-container {
+    width: 80%;
+    height: 100px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    scroll-behavior: smooth;
+    background: transparent;
+}
+
+/* Footer */
 .footer {
     background: #333;
     color: white;
     text-align: center;
     padding: 20px 0;
+}
+
+/* Heading Styles */
+body h2 {
+    color: #fff;
+    justify-content: center;
 }
 
