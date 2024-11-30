@@ -305,3 +305,38 @@ header {
         .add-to-cart:hover {
             background-color: #f04d4d;
         }
+        @media (min-width: 768px) {
+            /* For tablets and larger devices */
+            nav ul {
+                flex-direction: row;
+            }
+        
+            .sidebar {
+                width: 250px;
+                border-radius: 10px;
+            }
+        
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .top-bar .login-button {
+                width: 100%; /* Full width for smaller screens */
+                margin-top: 10px;
+            }
+        
+            .banner-content h1 {
+                font-size: 2em;
+            }
+        
+            .banner-content p {
+                font-size: 1em;
+            }
+        
+            nav ul li a {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+        }
