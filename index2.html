@@ -215,7 +215,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="#categories">Categories</a>
                 <ul>
-                    <li><a href="#">Bakery</a></li>
+                    <li><a href="bakery.html">Bakery</a></li>
                     <li><a href="#">Fresh produce</a></li>
                     <li><a href="#">Meats and seafoods</a></li>
                     <li><a href="#">Dairy</a></li>
@@ -231,46 +231,10 @@
 
     <h2>Your Cart</h2>
 
-    <div class="cart">
-        <div class="cart-item">
-            <div class="item-info">
-                <img src="https://daganghalal.blob.core.windows.net/24959/Product/1000x1000__topqualitynewlyharvestedfreshsweetjuicy-1575354128134.jpg" alt="Item 1 Image">
-                <span class="item-name">South African Sweet Oranges</span>
-            </div>
-            <input type="number" class="item-quantity" value="1" min="1">
-            <span class="item-price">$1.20</span>
-        </div>
-        <div class="cart-item">
-            <div class="item-info">
-                <img src="https://cdn.shopify.com/s/files/1/2331/3573/products/mango.jpg?v=1505654907" alt="Item 2 Image">
-                <span class="item-name">Australian Mango</span>
-            </div>
-            <input type="number" class="item-quantity" value="1" min="1">
-            <span class="item-price">$4.00</span>
-        </div>
-        <div class="cart-item">
-            <div class="item-info">
-                <img src="https://tse3.mm.bing.net/th?id=OIP.hB-80Y3V4QrLj-cShSmR9gHaGI&pid=Api&P=0&h=180" alt="Item 3 Image">
-                <span class="item-name">Pokka Green Tea</span>
-            </div>
-            <input type="number" class="item-quantity" value="1" min="1">
-            <span class="item-price">$10.00</span>
-        </div>
-        <div class="cart-item">
-            <div class="item-info">
-                <img src="https://down-sg.img.susercontent.com/file/7c14e72b3a3cb7dbec73623ce7b80701" alt="Item 4 Image">
-                <span class="item-name">Himalayan Salt Candy</span>
-            </div>
-            <input type="number" class="item-quantity" value="1" min="1">
-            <span class="item-price">$7.05</span>
-        </div>
-        <div class="cart-item">
-            <div class="item-info">
-                <img src="https://media.nedigital.sg/fairprice/fpol/media/images/product/XL/11978979_XL1_20211209.jpg?w=1024&q=70" alt="Item 5 Image">
-                <span class="item-name">SCS Unsalted Butter</span>
-            </div>
-            <input type="number" class="item-quantity" value="1" min="1">
-            <span class="item-price">$7.50</span>
+    <div id="cart-items"></div>
+
+        <div class="total">
+            Total: $<span id="total-price">0.00</span>
         </div>
     </div>
 
@@ -279,5 +243,64 @@
             <p>&copy; 2024 Supermart. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        
+        function displayCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const totalPriceElement = document.getElementById('total-price');
+
+           
+            cartItemsContainer.innerHTML = '';
+
+            
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                
+                if (item.quantity < 1 || isNaN(item.quantity)) {
+                    item.quantity = 1;
+                }
+
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `
+                    <div class="item-info">
+                        <img src="${item.img}" alt="${item.name} Image">
+                        <span class="item-name">${item.name}</span>
+                    </div>
+                    <input class="item-quantity" type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)">
+                    <span class="item-price">$${(item.price * item.quantity).toFixed(2)}</span>
+                    <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+
+                total += item.price * item.quantity;
+            });
+
+            
+            totalPriceElement.textContent = total.toFixed(2);
+        }
+
+        
+        function removeItem(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1); 
+            localStorage.setItem('cart', JSON.stringify(cart)); 
+            displayCart(); 
+        }
+
+        
+        function updateQuantity(index, newQuantity) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (newQuantity < 1 || isNaN(newQuantity)) newQuantity = 1; 
+            cart[index].quantity = parseInt(newQuantity);
+            localStorage.setItem('cart', JSON.stringify(cart)); 
+            displayCart(); 
+        }
+
+        
+        window.onload = displayCart;
+    </script>
 </body>
 </html>

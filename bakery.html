@@ -300,7 +300,7 @@
             border-radius: 10px;
         }
 
-        .product-card a {
+        .add-to-cart{
             text-decoration: none;
             padding: 10px 15px;
             color: #fff;
@@ -311,7 +311,7 @@
             transition: background-color 0.3s;
         }
 
-        .product-card a:hover {
+        .add-to-cart:hover {
             background-color: #f04d4d;
         }
 
@@ -384,40 +384,40 @@
             <h2>Freshly Baked Products</h2>
             <div class="product-grid">
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200?text=Cake+1" alt="Product 1">
+                    <img src="https://i1.wp.com/www.scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-1.jpg?fit=1500%2C1500" alt="Product 1">
                     <h3>Chocolate Cake</h3>
                     <p>$15.00</p>
-                    <a href="#" class="btn">Add to Cart</a>
+                    <button class="add-to-cart" data-name="Chocolate Cake" data-price="15.00">Add to Cart</button>
                 </div>
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200?text=Bread+1" alt="Product 2">
+                    <img src="https://media.nedigital.sg/fairprice/fpol/media/images/product/XL/93980_XL1_20210903.jpg" alt="Product 2">
                     <h3>Whole Wheat Bread</h3>
-                    <p>$5.00</p>
-                    <a href="#" class="btn">Add to Cart</a>
+                    <p>$8.00</p>
+                    <button class="add-to-cart" data-name="Whole Wheat Bread" data-price="8.00">Add to Cart</button>
                 </div>
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200?text=Pastry+1" alt="Product 3">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.8j1ZBx-DMg24SYcDx7JXbgHaE8&pid=Api&P=0&h=180" alt="Product 3">
                     <h3>Apple Pastry</h3>
                     <p>$7.00</p>
-                    <a href="#" class="btn">Add to Cart</a>
+                    <button class="add-to-cart" data-name="Apple Pastry" data-price="7.00">Add to Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://img.freepik.com/free-photo/minimalist-pile-delicious-cookies-copy-space_23-2148654561.jpg?t=st=1732775966~exp=1732779566~hmac=f0fbd6c0cf54736d026a7b223f1f2d74be5e8829bea47470ad683f9b9cb8aa9a&w=1060" alt="Bakery Product 3">
                 <h3>Chocolate Chip Cookies</h3>
                 <p>$15.00</p>
-                <a href="#" class="btn">Add to Cart</a>
+                <button class="add-to-cart" data-name="Chocolate Chip Cookies" data-price="15.00">Add to Cart</button>
                 </div>
                 <div class="product-card">
                     <img src="https://th.bing.com/th/id/OIP.T0yYhySdBLDbMjEW66a1BQHaEK?rs=1&pid=ImgDetMain" alt="Bakery Product 1">
                 <h3>Freshly Baked Baguette</h3>
                 <p>$7.00</p>
-                <a href="#" class="btn">Add to Cart</a>
+                <button class="add-to-cart" data-name="Fresh Baguette" data-price="7.00">Add to Cart</button>
                 </div>
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200?text=Cake+2" alt="Product 6">
-                    <h3>Vanilla Cake</h3>
-                    <p>$12.00</p>
-                    <a href="#" class="btn">Add to Cart</a>
+                    <img src="https://s3.amazonaws.com/images.ecwid.com/images/40571340/1864445642.jpg" alt="Bakery Product 2">
+                    <h3>Pain Au Chocolat</h3>
+                    <p>$4.99</p>
+                    <button class="add-to-cart" data-name="Chocolate Pastry" data-price="4.99">Add to Cart</button>
                 </div>
             </div>
         </section>
@@ -429,5 +429,29 @@
             <p>&copy; 2024 Supermart. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+       
+        function addToCart(event) {
+            const button = event.target;
+            const itemName = button.getAttribute('data-name');
+            const itemPrice = parseFloat(button.getAttribute('data-price'));
+
+           
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            
+            cart.push({ name: itemName, price: itemPrice });
+
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            
+        }
+
+        
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', addToCart);
+        });
+    </script>
 </body>
 </html>
